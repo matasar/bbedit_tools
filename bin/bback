@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+$:.push "/Users/ben/Code/bbedit_tools"
+
+require 'rubygems'
+require 'bbedit_results'
+
+def result(line, wd)
+  filename, line, message = line.split(":")
+  BBEdit::Result.new("note_kind", wd + "/" + filename, line, message)
+end
+
+browser = BBEdit::ResultBrowser.new("BBAck")
+
+wd = Dir.pwd
+
+ARGF.each_line do |ea|
+  puts ea
+  browser.results << result(ea, wd)
+end
+
+puts browser.applescript
+browser.show!
