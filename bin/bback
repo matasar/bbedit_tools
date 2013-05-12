@@ -19,5 +19,4 @@ ARGF.each_line do |ea|
   browser.results << result(ea, wd)
 end
 
-puts browser.applescript
 browser.show!

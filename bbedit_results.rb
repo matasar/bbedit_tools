@@ -7,7 +7,7 @@ module BBEdit
     end
 
     def escaped_message
-      message.gsub(/"/, "\\\"")
+      message.gsub(/(["\\])/, '\\\\\1')
     end
   end
 
