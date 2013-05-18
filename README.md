@@ -8,4 +8,4 @@ And you'll see something like:
 
 Colors are [Douce nuit](http://attaboy.tumblr.com/post/75614496/i-never-thought-about-sharing-my-colours-for) from [Luke Andrews](http://attaboy.ca).
 
-The [Code for bback](https://github.com/matasar/bbedit_tools/blob/master/bin/bback) is a simple demonstration of what it can do so far.
+The [code for bback](https://github.com/matasar/bbedit_tools/blob/master/bin/bback) is a simple demonstration of what it can do so far.
