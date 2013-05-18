@@ -1,9 +1,7 @@
 #!/usr/bin/env ruby
 
-$:.push "/Users/ben/Code/bbedit_tools/lib"
-
 require 'rubygems'
-require 'bbedit_results'
+require 'bbedit_tools'
 
 def result(line, wd)
   filename, line, message = line.split(":")

@@ -16,6 +16,24 @@ module BBEdit
     end
   end
 
+  class Note < Result
+    def initialize(file, line, message)
+      super('note_kind', file, line, message)
+    end
+  end
+
+  class Warning < Result
+    def initialize(file, line, message)
+      super('warning_kind', file, line, message)
+    end
+  end
+
+  class Error < Result
+    def initialize(file, line, message)
+      super('error_kind', file, line, message)
+    end
+  end
+
   class ResultBrowser < Struct.new(:results, :name)
     def initialize(name)
       self.results = []
@@ -39,24 +57,6 @@ end tell
       pipe.puts(applescript)
       pipe.puts('"Opened BBEdit Browser"')
       pipe.close
-    end
-  end
-
-  class Note < Result
-    def initialize(file, line, message)
-      super('note_kind', file, line, message)
-    end
-  end
-
-  class Warning < Result
-    def initialize(file, line, message)
-      super('warning_kind', file, line, message)
-    end
-  end
-
-  class Error < Result
-    def initialize(file, line, message)
-      super('error_kind', file, line, message)
     end
   end
 end
