@@ -3,7 +3,12 @@
 module BBEdit
   class Result < Struct.new(:kind, :file, :line, :message)
     def for_bbedit
-      "{result_kind:#{kind}, result_file:\"#{file}\", result_line:#{line}, message:\"#{escaped_message}\"}"
+      [
+        "{result_kind:#{kind}, ",
+        "result_file:\"#{file}\", ",
+        "result_line: #{line}, ",
+        "message:\"#{escaped_message}\"}"
+      ].join("")
     end
 
     def escaped_message
@@ -34,6 +39,24 @@ end tell
       pipe.puts(applescript)
       pipe.puts('"Opened BBEdit Browser"')
       pipe.close
+    end
+  end
+
+  class Note < Result
+    def initialize(file, line, message)
+      super('note_kind', file, line, message)
+    end
+  end
+
+  class Warning < Result
+    def initialize(file, line, message)
+      super('warning_kind', file, line, message)
+    end
+  end
+
+  class Error < Result
+    def initialize(file, line, message)
+      super('error_kind', file, line, message)
     end
   end
 end

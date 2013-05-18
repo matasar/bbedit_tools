@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
-$:.push "/Users/ben/Code/bbedit_tools"
+$:.push "/Users/ben/Code/bbedit_tools/lib"
 
 require 'rubygems'
 require 'bbedit_results'
 
 def result(line, wd)
   filename, line, message = line.split(":")
-  BBEdit::Result.new("note_kind", wd + "/" + filename, line, message)
+  BBEdit::Note.new(wd + "/" + filename, line, message)
 end
 
 browser = BBEdit::ResultBrowser.new("BBAck")
