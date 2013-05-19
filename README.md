@@ -1,4 +1,4 @@
-This is a ruby library for automating BBEdit. So far it doesn't do much, just lets you create results browsers. It comes with a demonstration command line tool called "bback" that takes search output from tools like [Ack](<http://beyondgrep.com>) and [The Silver Searcher](https://github.com/ggreer/the_silver_searcher). Use it like this:
+This is a ruby library for automating BBEdit. It doesn't do much right now, just lets you create results browsers. It comes with a demonstration command line tool called "bback" that takes search output from tools like [Ack](<http://beyondgrep.com>) and [The Silver Searcher](https://github.com/ggreer/the_silver_searcher). Use it like this:
 
     $ ag BBEdit | bback
 
