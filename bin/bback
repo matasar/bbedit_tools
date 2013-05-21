@@ -4,7 +4,10 @@ require 'rubygems'
 require 'bbedit_tools'
 
 def result(line, wd)
-  filename, line, message = line.split(":")
+  items = line.split(":")
+  filename = items.shift
+  line = items.shift
+  message = items.join(":")
   BBEdit::Note.new(wd + "/" + filename, line, message)
 end
 
