@@ -1,5 +1,7 @@
 # encoding: UTF-8
 
+require 'bbedit_tools/applescript'
+
 module BBEdit
   class Result < Struct.new(:kind, :file, :line, :message)
     def for_bbedit
@@ -53,10 +55,7 @@ end tell
     end
 
     def show!
-      pipe = IO.popen("osascript - >/dev/null", "w")
-      pipe.puts(applescript)
-      pipe.puts('"Opened BBEdit Browser"')
-      pipe.close
+      run_applscscript("Opened BBEdit Browser")
     end
   end
 end
