@@ -37,6 +37,8 @@ module BBEdit
   end
 
   class ResultBrowser < Struct.new(:results, :name)
+    include Applescript
+
     def initialize(name)
       self.results = []
       self.name = name
@@ -55,7 +57,7 @@ end tell
     end
 
     def show!
-      run_applscscript("Opened BBEdit Browser")
+      run_applescript("Opened BBEdit Browser")
     end
   end
 end

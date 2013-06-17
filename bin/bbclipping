@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+# Inserts a clipping with the contents of ARGF. Example to insert a ruby classdef
+# clipping
+
+# $ bbclipping
+#  #INDENT#
+#  class #PLACEHOLDERSTART#ClassName#PLACEHOLDEREND#
+#   #INSERTION#
+#  end
+# ^D
+
+require 'rubygems'
+require 'bbedit_tools'
+
+clipping = BBEdit::Clipping.new(ARGF.read)
+clipping.insert!
+clipping.cleanup!

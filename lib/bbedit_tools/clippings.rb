@@ -21,7 +21,7 @@ module BBEdit
     include Applescript
 
     def tempfile
-      Tempfile.open('bbedit_clipping') do |f|
+      @tempfile ||= Tempfile.open('bbedit_clipping') do |f|
         f.puts(self.text)
         f
       end
@@ -38,6 +38,10 @@ module BBEdit
 
     def insert!
       run_applescript("Inserted clipping")
+    end
+
+    def cleanup!
+      @tempfile.unlink
     end
   end
 end
