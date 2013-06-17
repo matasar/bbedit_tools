@@ -1,18 +1,5 @@
 # encoding: UTF-8
 
-# tell application "BBEdit"
-#
-# 	set theScript to selection as text
-# 	set clippingFileRef to (path to temporary items as string) & "clipping_as_selection"
-#
-# 	--close access clippingFileRef
-# 	set fileref to open for access file clippingFileRef with write permission
-# 	set eof of fileref to 0 -- clear the file
-# 	write theScript to fileref
-# 	close access fileref
-#
-# 	insert clipping clippingFileRef into window 1
-# end tell
 require 'tempfile'
 require 'bbedit_tools/applescript'
 
