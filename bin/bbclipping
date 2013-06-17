@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-# Inserts a clipping with the contents of ARGF. Example to insert a ruby classdef
-# clipping
+# Inserts a clipping with the contents of ARGF. Here's an example to insert a ruby classdef
+# clipping:
 
 # $ bbclipping
 #  #INDENT#
