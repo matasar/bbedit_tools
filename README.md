@@ -10,4 +10,4 @@ And you'll see something like:
 
 Colors are [Douce nuit](http://attaboy.tumblr.com/post/75614496/i-never-thought-about-sharing-my-colours-for) from [Luke Andrews](http://attaboy.ca).
 
-The [code for bback](https://github.com/matasar/bbedit_tools/blob/master/bin/bback) is a simple demonstration of what I have in mind for this library. Another tool is called "[bbclipping](https://github.com/matasar/bbedit_tools/blob/master/bin/bbclipping", and inserts a clipping with the contents of ARGF. This makes it easier to synthesize clippings and run them on the command line.
+The [code for bback](https://github.com/matasar/bbedit_tools/blob/master/bin/bback) is a simple demonstration of what I have in mind for this library. Another tool is called "[bbclipping](https://github.com/matasar/bbedit_tools/blob/master/bin/bbclipping)", and inserts a clipping with the contents of ARGF. This makes it easier to synthesize clippings and run them on the command line.
