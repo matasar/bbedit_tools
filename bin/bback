@@ -3,8 +3,9 @@
 require 'rubygems'
 require 'bbedit_tools'
 
-def result(line, wd)
+def make_result(line, wd)
   items = line.split(":")
+  return unless items.size > 2
   filename = items.shift
   line = items.shift
   message = items.join(":")
@@ -17,7 +18,8 @@ wd = Dir.pwd
 
 ARGF.each_line do |ea|
   puts ea
-  browser.results << result(ea, wd)
+  result = make_result(ea, wd)
+  browser.results << result unless result.nil?
 end
 
 browser.show!
